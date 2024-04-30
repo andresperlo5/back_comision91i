@@ -10,7 +10,6 @@ module.exports = (role) => async (req, res, next) => {
     }
 
     const verifyToken = jwt.verify(token, process.env.SECRET_KEY_JWT);
-    console.log(verifyToken.user);
     if (role === verifyToken.user.role) {
       (req.idCart = verifyToken.user.idCart),
         (req.idFav = verifyToken.user.idFav);

@@ -60,8 +60,6 @@ const createProd = async (req, res) => {
 /* PUT - Actualizar - U -  Update */
 const updateProd = async (req, res) => {
   try {
-    console.log(req.file);
-    console.log(req.body);
     const results = await cloudinary.uploader.upload(req.file.path);
 
     const updateProd = {
@@ -121,7 +119,6 @@ const searchProduct = async (req, res) => {
 
 const addImageProduct = async (req, res) => {
   try {
-    console.log(req.body);
     const product = await ProductModel.findOne({ _id: req.params.idProd });
     const imagen = await cloudinary.uploader.upload(req.file.path);
 

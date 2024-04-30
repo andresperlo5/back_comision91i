@@ -23,10 +23,10 @@ router.get(
 );
 router.get("/", getProducts);
 
-router.post("/", createProd);
+router.post("/", auth("admin"), createProd);
 router.post("/addImage/:idProd", multer.single("image"), addImageProduct);
 
-router.put("/:id", multer.single("image"), updateProd);
-router.delete("/:id", deleteProd);
+router.put("/:id", multer.single("image"), auth("admin"), updateProd);
+router.delete("/:id", auth("admin"), deleteProd);
 
 module.exports = router;

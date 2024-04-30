@@ -41,16 +41,13 @@ const addProductFavs = async (req, res) => {
 const deleteProdFavs = async (req, res) => {
   try {
     const favsUser = await FavsModel.findById(req.idFav);
-    console.log(req.params.id);
     const productFilter = favsUser.products.filter(
       (product) => product._id.toString() !== req.params.id
     );
-    console.log(productFilter);
     const searchProductFilter = favsUser.products.filter(
       (product) => product._id.toString() === req.params.id
     );
 
-    console.log(searchProductFilter);
     if (searchProductFilter.length) {
       favsUser.products = productFilter;
       await favsUser.save();

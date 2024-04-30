@@ -12,7 +12,6 @@ const welcomeUser = async () => {
       subject: "Hello ✔", // Subject line
       html: "<b>Hello world?</b>", // html body
     });
-    console.log(info);
     if (info.response.includes("OK")) {
       return 200;
     }

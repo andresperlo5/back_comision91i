@@ -12,9 +12,9 @@ const { check } = require("express-validator");
 const auth = require("../middleware/auth");
 const router = express.Router(); /* check, params, body, query */
 
-router.get("/", getAllUser);
-router.get("/disabledUser", getAllUserDeletedTrue);
-router.get("/enabledUser", getAllUserDeletedFalse);
+router.get("/", auth("admin"), getAllUser);
+router.get("/disabledUser", auth("admin"), getAllUserDeletedTrue);
+router.get("/enabledUser", auth("admin"), getAllUserDeletedFalse);
 
 router.post(
   "/register",
