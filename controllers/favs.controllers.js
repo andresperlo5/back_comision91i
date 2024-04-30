@@ -1,4 +1,4 @@
-const FavsModel = require("../models/FavSchema");
+const FavsModel = require("../models/favSchema");
 const ProductModel = require("../models/productSchema");
 
 const getFav = async (req, res) => {

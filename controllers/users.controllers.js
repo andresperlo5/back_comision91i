@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const CartModel = require("../models/cartSchema");
-const FavsModel = require("../models/FavSchema");
+const FavsModel = require("../models/favSchema");
 const { welcomeUser } = require("../middleware/messages");
 
 const getAllUser = async (req, res) => {
